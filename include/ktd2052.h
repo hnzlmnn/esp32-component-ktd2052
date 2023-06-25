@@ -8,6 +8,8 @@
 #include <stdint.h>
 #include <sys/cdefs.h>
 
+#include "pax_types.h"
+
 __BEGIN_DECLS
 
 #define MAX_DEVICES 3
@@ -56,5 +58,6 @@ extern esp_err_t ktd2052_init(KTD2052* device);
  * @param blue The blue value
  */
 extern esp_err_t ktd2052_set_color(KTD2052* device, int led, uint8_t red, uint8_t green, uint8_t blue);
+extern esp_err_t ktd2052_set_color_pax(KTD2052* device, int led, pax_col_t rgb);
 
 __END_DECLS

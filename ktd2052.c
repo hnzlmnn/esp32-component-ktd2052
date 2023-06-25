@@ -97,3 +97,7 @@ esp_err_t ktd2052_set_color(KTD2052* device, int led, uint8_t red, uint8_t green
 
     return write_reg_n(device, reg, buf, len);
 }
+
+esp_err_t ktd2052_set_color_pax(KTD2052* device, int led, pax_col_t rgb) {
+    return ktd2052_set_color(device, led, (uint8_t) (rgb >> 16), (uint8_t) (rgb >> 8), (uint8_t) rgb);
+}
